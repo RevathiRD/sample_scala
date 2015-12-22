@@ -1,4 +1,7 @@
 language: scala
+build_image: drydock/u12sca:tip
+
+
 
 scala:
     - 2.11.0
