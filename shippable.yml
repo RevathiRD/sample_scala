@@ -1,5 +1,6 @@
 language: scala
-build_image: drydock/u12sca:tip
+#build_image: drydock/u12sca:tip
+build_image: drydock/u14sca:tip
 
 
 
