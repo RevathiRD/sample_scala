@@ -3,7 +3,7 @@ language: scala
 #build_image: drydock/u14sca:tip
 env:
     global:
-     - APP_NAME=scala
+     - APP_NAME=scalaheroku
 
 
 
