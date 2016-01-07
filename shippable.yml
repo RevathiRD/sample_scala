@@ -3,14 +3,14 @@ language: scala
 #build_image: drydock/u14sca:tip
 env:
     global:
-     - APP_NAME=scalaheroku
+        - APP_NAME=scalaheroku
 
 
 
 scala:
     - 2.11.0
-    - 2.10
-    - 2.11.1
+   # - 2.10
+  #  - 2.11.1
 
 script:
   - export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
@@ -19,8 +19,11 @@ script:
 after_script:
   - mkdir -p shippable/codecoverage
   - mv target/scala-2.11/coverage-report/cobertura.xml $PWD/shippable/codecoverage/
+  
 after_success :
-  - git push -f git@heroku.com:$APP_NAME.git master
+  #- git push -f git@heroku.com:$APP_NAME.git master
+  - git push -f git@heroku.com:scalaheroku.git
+  
 notifications:
     irc:  "chat.freenode.net#test-irc"
     
