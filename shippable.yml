@@ -4,6 +4,8 @@ language: scala
 env:
     global:
         - APP_NAME=scalaheroku
+        - FOO=bar
+        - BAR=foo
 
 
 
