@@ -1,11 +1,7 @@
 language: scala
 #build_image: drydock/u12sca:tip
 #build_image: drydock/u14sca:tip
-env:
-    global:
-        - APP_NAME=scalaheroku
-        - FOO=bar
-        - BAR=foo
+
 
 
 
@@ -22,9 +18,9 @@ after_script:
   - mkdir -p shippable/codecoverage
   - mv target/scala-2.11/coverage-report/cobertura.xml $PWD/shippable/codecoverage/
   
-after_success :
+#after_success :
   #- git push -f git@heroku.com:$APP_NAME.git master
-  - git push -f git@heroku.com:scalaheroku.git
+  #- git push -f git@heroku.com:scalaheroku.git
   
 notifications:
     irc:  "chat.freenode.net#test-irc"
